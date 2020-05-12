@@ -2,6 +2,7 @@ package com.project.copypasteapi.Bean;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
@@ -15,8 +16,10 @@ public class CopyPasteBean {
 	private String lastcontent;
 	private String dateandTime;
 	
+	private String name;
+	
 	@ElementCollection
-	private List<String> contentList = new ArrayList<String>();
+	private List<UserData> contentList = new ArrayList<UserData>();
 
 	public String getUniqueCodeUrl() {
 		return uniqueCodeUrl;
@@ -42,13 +45,24 @@ public class CopyPasteBean {
 		this.dateandTime = dateandTime;
 	}
 
-	public List<String> getContentList() {
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public List<UserData> getContentList() {
 		return contentList;
 	}
 
-	public void setContentList(List<String> contentList) {
+	public void setContentList(List<UserData> contentList) {
 		this.contentList = contentList;
 	}
+
+	
+
 	
 
 }
